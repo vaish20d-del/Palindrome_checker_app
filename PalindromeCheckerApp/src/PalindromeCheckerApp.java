@@ -36,7 +36,7 @@ public class PalindromeCheckerApp {
         boolean result = isPalindrome(input);
 
         if (result) {
-            System.out.println("The given string is a Palindrome.");
+            System.out.println("The given string is a Palindrome. ");
         } else {
             System.out.println("The given string is not a Palindrome.");
         }
