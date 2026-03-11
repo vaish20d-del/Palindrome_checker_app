@@ -9,26 +9,23 @@ public class PalindromeCheckerApp {
         System.out.print("Enter a string: ");
         String input = sc.nextLine();
 
-        // Create Queue and Stack
-        Queue<Character> queue = new LinkedList<>();
-        Stack<Character> stack = new Stack<>();
+        // Create Deque
+        Deque<Character> deque = new ArrayDeque<>();
 
-        // Add characters to queue and stack
+        // Insert characters into deque
         for(int i = 0; i < input.length(); i++){
-            char ch = input.charAt(i);
-
-            queue.add(ch);     // enqueue
-            stack.push(ch);    // push
+            deque.addLast(input.charAt(i));
         }
 
         boolean isPalindrome = true;
 
-        // Compare dequeue and pop
-        while(!queue.isEmpty()){
-            char qChar = queue.remove();  // dequeue
-            char sChar = stack.pop();     // pop
+        // Compare front and rear characters
+        while(deque.size() > 1){
 
-            if(qChar != sChar){
+            char front = deque.removeFirst();
+            char rear = deque.removeLast();
+
+            if(front != rear){
                 isPalindrome = false;
                 break;
             }
